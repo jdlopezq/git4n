@@ -1,0 +1,37 @@
+/* Structure */
+table {
+    width: 100%;
+  }
+
+
+.table{
+    &__container{
+        background:#434343;
+        padding: 0;
+        margin: 30px 30px 100px;
+        
+    }
+    &__filter{
+        padding: 20px 24px 20px 0;
+        width: 100%;
+        color:white;
+        input{
+            caret-color:var(--color-title-red)
+        }
+    }
+    &__url{
+        color:white
+    }
+   
+    &__row{
+        &:hover{
+            background-color: white;
+            .table__cell{
+            color:black;
+            a{
+                color:var(--color-title-red)
+                }
+            }
+        }
+    }
+}

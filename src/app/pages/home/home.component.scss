@@ -1,0 +1,16 @@
+.particles{
+    position: relative;
+}
+
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+  .login__card{
+    position: absolute;
+    background-color: red;
+    z-index: 10000
+}

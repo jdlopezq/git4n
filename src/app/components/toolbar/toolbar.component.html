@@ -1,0 +1,30 @@
+<mat-toolbar class="menu__container">
+  <mat-toolbar-row class="menu__row">
+    <span>{{pageName}}</span>
+    <span class="spacer"></span>
+    <button mat-icon-button *ngIf="_authService.user|async" class="menu__icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <!-- <button mat-menu-item>
+        <mat-icon>table_chart</mat-icon>
+        <span>Go Table</span>
+      </button> -->
+      <button mat-menu-item (click)="clearData()">
+        <mat-icon>delete</mat-icon>
+        <span>Clear Data</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Exit</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="menu__row__info" *ngIf="userInfo">
+    <p class="menu__row__userinfo">Name: <span>{{userInfo.name}} {{userInfo.lastname}}</span></p>
+    <p class="menu__row__userinfo">Document: <span>{{userInfo.document}}</span></p>
+    <p class="menu__row__userinfo">Birthdate: <span>{{userInfo.birthdate | date}}</span></p>
+    <p class="menu__row__userinfo">Email: <span>{{userInfo.mail}}</span></p>
+    <p class="menu__row__userinfo">Github: <span>{{userInfo.guser}}</span></p>
+  </mat-toolbar-row>
+</mat-toolbar>

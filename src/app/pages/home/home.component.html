@@ -1,0 +1,15 @@
+<div class="particles">
+    <div id="particles-js">
+        <ng-container [ngSwitch]="toggleWelcome">
+            <ng-container *ngSwitchCase="'login'">
+                <app-login (showWelcome)="showLoginCard($event)"></app-login>
+            </ng-container>
+            <ng-container *ngSwitchCase="'singup'">
+                <app-singup (showWelcome)="showLoginCard($event)"></app-singup>
+            </ng-container>
+            <ng-container *ngSwitchCase="'welcome'">
+                <app-welcome (showLogin)="showLoginCard($event)"></app-welcome>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

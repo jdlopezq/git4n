@@ -1,0 +1,56 @@
+<mat-card class="register__card">
+    <mat-card-header class="register__card__header">
+        <mat-card-title class="register__card__title">User registration</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="register__card__text">
+        <form [formGroup]="registerForm" class="register__card__form">
+             <!-- Name field -->
+            <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Type the middle and first name" formControlName="name" alphaNumeric>
+                <mat-icon matSuffix>emoji_emotions</mat-icon>
+                <mat-hint>Only letters</mat-hint>
+              </mat-form-field>
+              <!-- Last name field -->
+              <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Type the last name" formControlName="lastname">
+                <mat-icon matSuffix>add_reaction</mat-icon>
+                <mat-hint>Only letters</mat-hint>
+              </mat-form-field>
+              <!-- Document field -->
+              <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>Document</mat-label>
+                <input matInput placeholder="Type the CC" formControlName="document" passwordText>
+                <mat-icon matSuffix>payment</mat-icon>
+                <mat-hint>Only numbers</mat-hint>
+              </mat-form-field>
+              <!-- Birthday field -->
+              <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>Birthday</mat-label>
+                <input matInput name="expeditionDate" [matDatepicker]="picker" (focus)="picker.open()"  formControlName="birthdate" readonly="true" [max]="today">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker  startView='multi-year'></mat-datepicker>
+                <mat-placeholder>Select a date</mat-placeholder>
+                
+              </mat-form-field>
+            <!-- Email field -->
+              <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="mail">
+                <mat-icon matSuffix>mail_outline</mat-icon>
+                <mat-hint>example@mail.com</mat-hint>
+              </mat-form-field>
+              <!-- Github field -->
+              <mat-form-field appearance="standard" class="register__card__field">
+                <mat-label>Github User</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="guser">
+                <mat-icon matSuffix>share</mat-icon>
+                <mat-hint>As created on github</mat-hint>
+              </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class="register__card__actions">
+        <button mat-raised-button (click)="registerUser()" [disabled]="!registerForm.valid">Done!</button>
+    </mat-card-actions>
+</mat-card>

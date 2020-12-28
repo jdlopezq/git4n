@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root{
+    --color-welcome-bkg:#ffffffe8;
+    --color-text-white:#fff;
+    --color-icons-red:#ec1d27;
+    --color-text-black:#464646;
+    --color-title-red:#ec1d27;
+    --color-icons-white:#fff
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: white;
+  }
+  .mat-focused .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: white !important;
+  }
+  .mat-focused .mat-form-field-label {
+    color: white !important;
+  }
+  .mat-datepicker-toggle-active{
+    color: white;
+  }
